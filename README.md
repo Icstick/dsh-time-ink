@@ -1,5 +1,13 @@
 # dsh-time-ink
 
+> **状态：已退役（2026-09-09）** —— 官方 `@deepseek-ai/dsh-time-context` 提供同功能且更完整
+> （ISO 时间 + IANA 时区 + 浏览器时区策略 + 经过时长、`refreshIntervalMs` 节流、持久 user 消息）。
+> 用户决定「既然官方有，就用官方的」。本仓库保留为设计记录，**不再维护**。
+> 迁移记录：`~/.dsh/profiles/web/package.json` 的 bundles 已把 `dsh-time-ink` 换成
+> `@deepseek-ai/dsh-time-context`；`cordis.patch.yml` 增加 `time-context` 配置
+> （`timeZone: Asia/Shanghai` / `refreshIntervalMs: 60000`）。dependency 条目保留，换回即恢复。
+> 同行调研与迁移依据见 [docs/research/PEER-SURVEY-20260909.md](docs/research/PEER-SURVEY-20260909.md)。
+
 给 DeepSeek Harness 的每次用户消息注入当前系统时间。
 
 ## 背景
